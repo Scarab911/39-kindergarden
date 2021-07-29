@@ -30,11 +30,13 @@ class Kindergarden {
     sayHi() {
         let sayHi = ``;
         for (let kid of this.kidsList) {
-            if (kid === this.kidsList[this.kidsList.length - 1]) {
-                sayHi += `and ${kid}`
+
+            if (kid === this.kidsList[this.kidsList.length - 2] &&
+                this.kidsList.length >= 2) {
+                sayHi += `${this.kidsList[this.kidsList.length - 2]} and ${this.kidsList[this.kidsList.length - 1]}`
                 break
             }
-            sayHi += `${kid}, `
+            sayHi += this.kidsList.length > 1 ? `${kid}, ` : `${kid}`;
         }
         console.log(`"${this.kindergarden}" is visited by: ${sayHi}.`);
     }
